@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NFA Visualization</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <form id="dfa-form">
+            <label for="states">States (comma-separated):</label>
+            <input type="text" id="states" required>
+            
+            <label for="start-state">Start State:</label>
+            <input type="text" id="start-state" required>
+            
+            <label for="accept-states">Accept States (comma-separated):</label>
+            <input type="text" id="accept-states" required>
+            
+            <label for="transitions">Transitions (format: from,to,label;):</label>
+            <input type="text" id="transitions" required>
+            
+            <button type="submit">Submit</button>
+        </form>
+
+        <div id="visualization">
+            <svg width="800" height="600"></svg>
+        </div>
+
+        <div class="steps">
+            <ul id="steps-list"></ul>
+        </div>
+
+        <button id="next-step">Next Step</button>
+
+        <div class="tabs">
+            <button class="tab-button" onclick="showTab('visualization')">Visualization</button>
+            <button class="tab-button" onclick="showTab('steps')">Steps</button>
+        </div>
+    </div>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
